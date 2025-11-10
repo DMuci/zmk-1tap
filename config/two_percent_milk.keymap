@@ -17,8 +17,8 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-                &kp X
-                &mt ESC MS_BTN1
+                &tap_dance_click_escape
+                &tap_dance_click_escape
             >;
         };
     };
