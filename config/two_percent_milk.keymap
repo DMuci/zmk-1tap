@@ -9,24 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
- / {
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
-        layers = [
-            /* Layer 0: Default - tap left click */
-            {
-                bindings = <
-                    &ltg 1 LCLK
-                >;
-            },
-
-            /* Layer 1: Escape layer - tap escape */
-            {
-                bindings = <
-                    &kp ESC
-                >;
-            }
-        ];
+        default_layer {
+            display-name = "Default Layer";
+            bindings = <
+                &kp X
+                &mkp LCLK 
+            >;
+        };
     };
 };
