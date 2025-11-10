@@ -14,12 +14,20 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Default Layer";
-            bindings = <
-                &kp X
-                &mkp LCLK 
-            >;
-        };
+        layers = [
+            /* Layer 0: Default - tap left click */
+            {
+                bindings = <
+                    &ltg 1 LCLK  // Tap: left click, hold: toggle to layer 1
+                >;
+            },
+
+            /* Layer 1: Escape layer - tap escape */
+            {
+                bindings = <
+                    &kp ESC      // Tap: escape
+                >;
+            }
+        ];
     };
 };
