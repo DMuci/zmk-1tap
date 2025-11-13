@@ -11,14 +11,30 @@
 
 
 / {
+    behaviors {
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&kp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Default Layer";
             bindings = <
-                &kp X
-                &mkp LCLK 
+&kp X  &new_behavior ESCAPE LCLK
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+&trans  &trans
             >;
         };
     };
